@@ -2,6 +2,7 @@ package com.hexacode.studenttaskpro;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 
 public class TodoEntry implements Serializable {
     // description
@@ -14,12 +15,29 @@ public class TodoEntry implements Serializable {
     // String school
 
     // checkbox sa ui
-    private boolean status;
+    private boolean isDone;
     // list sa ui
     private TodoType type;
 
     // date related fields
     private LocalDateTime deadline;
+
+    // constructor
+    TodoEntry(String name, String subject, boolean status, TodoType type, LocalDateTime deadline) {
+        this.name = name;
+        this.subject = subject;
+        this.isDone = status;
+        this.type = type;
+        this.deadline = deadline;
+    }
+
+    TodoEntry() {
+        this.name = "Unnamed";
+        this.subject = "Unnamed";
+        this.isDone = false;
+        this.type = TodoType.REVIEW;
+        this.deadline = LocalDateTime.now();
+    }
 
     // setters
     public void setName(String name) {
@@ -30,8 +48,8 @@ public class TodoEntry implements Serializable {
         this.subject = subject;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setDone(boolean done) {
+        this.isDone = done;
     }
 
     public void setType(TodoType type) {
@@ -51,8 +69,8 @@ public class TodoEntry implements Serializable {
         return subject;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isDone() {
+        return isDone;
     }
 
     public TodoType getType() {

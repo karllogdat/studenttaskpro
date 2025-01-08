@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class HelloApplication extends Application {
     @Override
@@ -15,6 +16,19 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+
+        // console checking
+        Scanner console = new Scanner(System.in);
+
+        TodoEntry myTodo = new TodoEntry();
+
+        System.out.println(myTodo.getName());
+        System.out.println(myTodo.getSubject());
+        System.out.println(myTodo.isDone());
+        System.out.println(myTodo.getType());
+        System.out.println(myTodo.getDeadline());
+
+        console.close();
     }
 
     public static void main(String[] args) {
