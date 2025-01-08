@@ -5,3 +5,5 @@ public enum TodoType {
     ACTIVITY,
     EXAM,
 }
+
+// hell yeah
