@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### test todos.ser ###
+src/main/resources/com/hexacode/studenttaskpro/todos.ser
