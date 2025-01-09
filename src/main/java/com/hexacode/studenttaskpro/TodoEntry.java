@@ -3,8 +3,9 @@ package com.hexacode.studenttaskpro;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Calendar;
+import java.util.Comparator;
 
-public class TodoEntry implements Serializable {
+public class TodoEntry implements Serializable, Comparable<TodoEntry> {
     // description
     private String name;
     // private String section;
@@ -79,5 +80,10 @@ public class TodoEntry implements Serializable {
 
     public LocalDateTime getDeadline() {
         return deadline;
+    }
+
+    @Override
+    public int compareTo(TodoEntry other) {
+        return this.deadline.compareTo(other.deadline);
     }
 }
