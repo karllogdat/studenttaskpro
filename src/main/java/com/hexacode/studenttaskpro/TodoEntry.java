@@ -86,4 +86,10 @@ public class TodoEntry implements Serializable, Comparable<TodoEntry> {
     public int compareTo(TodoEntry other) {
         return this.deadline.compareTo(other.deadline);
     }
+
+    // string debug
+    @Override
+    public String toString() {
+        return this.name + "\n" + this.subject + "\n" + this.isDone + "\n" + this.type + "\n" + this.deadline + "\n";
+    }
 }
