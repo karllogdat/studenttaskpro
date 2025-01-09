@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -21,47 +21,6 @@ public class HelloApplication extends Application {
 
         // console checking
         Scanner console = new Scanner(System.in);
-
-        TodoEntry myTodo = new TodoEntry(
-                "Review for deptals",
-                "DSA",
-                false,
-                TodoType.REVIEW,
-                LocalDateTime.of(
-                        2025,
-                        1,
-                        24,
-                        12,
-                        0
-                )
-        );
-
-        TodoEntry othertodo = new TodoEntry(
-                "Review for deptals",
-                "OOP",
-                false,
-                TodoType.REVIEW,
-                LocalDateTime.of(
-                        2025,
-                        1,
-                        22,
-                        12,
-                        0
-                )
-        );
-
-        PriorityQueue<TodoEntry> list = new PriorityQueue<TodoEntry>();
-
-        list.add(othertodo);
-        list.add(myTodo);
-
-        System.out.println(list.peek().getSubject());
-
-        System.out.println(myTodo.getName());
-        System.out.println(myTodo.getSubject());
-        System.out.println(myTodo.isDone());
-        System.out.println(myTodo.getType());
-        System.out.println(myTodo.getDeadline());
 
         console.close();
     }
