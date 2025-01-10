@@ -5,6 +5,9 @@ import java.util.PriorityQueue;
 
 public class TodoList {
     private PriorityQueue<TodoEntry> list = new PriorityQueue<TodoEntry>();
+
+    // TODO: make file path dynamic
+    // example: System.getProperty("user.home") + "/todos.ser"
     private final File file = new File("src/main/resources/todos.ser");
 
     TodoList() {
@@ -21,6 +24,9 @@ public class TodoList {
             if (file.length() == 0) {
                 return;
             }
+            // TODO: add proper checking of file to prevent IOException
+            // IOException occurs when the file contains no object, but
+            // lines 24-26 fails.
 
             // read todos in file to PriorityQueue<TodoEntry> list of TodoList
             this.list = (PriorityQueue<TodoEntry>) in.readObject();
