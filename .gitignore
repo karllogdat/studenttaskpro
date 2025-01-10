@@ -38,4 +38,4 @@ build/
 .DS_Store
 
 ### test todos.ser ###
-src/main/resources/com/hexacode/studenttaskpro/todos.ser
+src/main/resources/todos.ser
