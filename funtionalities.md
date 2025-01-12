@@ -20,7 +20,7 @@ class TodoEntry {
 ```
 
 2. priority algorithm.
-heaps na naka base sa date and time ng dl. 
+heaps na naka base sa date and time ng dl.
 
 3. serialize todos
 ![img.png](img.png)
