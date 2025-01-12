@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * Focal class for application todo entries
+ * Focal class for application
  */
 public class TodoEntry implements Serializable, Comparable<TodoEntry> {
     private String name;
@@ -61,7 +61,7 @@ public class TodoEntry implements Serializable, Comparable<TodoEntry> {
     }
 
     /**
-     * Sets todo entry deadline.
+     * Sets entry deadline.
      * @param deadline LocalDateTime type. deadline must not be a past date.
      * @throws IllegalDateException when given date is invalid. use try-catch statements
      * to handle such cases.
@@ -93,6 +93,7 @@ public class TodoEntry implements Serializable, Comparable<TodoEntry> {
         return deadline;
     }
 
+    // for sorting the class
     @Override
     public int compareTo(TodoEntry other) {
         return this.deadline.compareTo(other.deadline);

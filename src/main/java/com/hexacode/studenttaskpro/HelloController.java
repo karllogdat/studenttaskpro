@@ -21,13 +21,16 @@ public class HelloController {
         InitTodoEntries();
     }
 
+    // test method for initalizing the entries
     @FXML
     private void InitTodoEntries() {
         for (int i = 0; i < 5; ++i) {
             try {
+                // creates the FXML loader to load the controller class
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("todo-entry.fxml"));
                 Pane cardPane = loader.load();
 
+                // actual loading of controller class
                 TodoEntryController todoEntryController = loader.getController();
                 todoEntryController.setName("Test Todo Entry" + i);
                 todoEntryController.setSubject("Test Subject" + i);
