@@ -1,12 +1,14 @@
 package com.hexacode.studenttaskpro;
 
+import com.hexacode.studenttaskpro.exceptions.IllegalDateException;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Comparator;
 
+/**
+ * Focal class for application todo entries
+ */
 public class TodoEntry implements Serializable, Comparable<TodoEntry> {
-    // description
     private String name;
     // private String section;
 
@@ -25,11 +27,12 @@ public class TodoEntry implements Serializable, Comparable<TodoEntry> {
 
     // constructor
     TodoEntry(String name, String subject, boolean status, TodoType type, LocalDateTime deadline) {
-        this.name = name;
-        this.subject = subject;
-        this.isDone = status;
-        this.type = type;
-        this.deadline = deadline;
+        // uses setter functions to properly handle invalid arguments
+        this.setName(name);
+        this.setSubject(subject);
+        this.setDone(status);
+        this.setType(type);
+        this.setDeadline(deadline);
     }
 
     TodoEntry() {
@@ -57,8 +60,16 @@ public class TodoEntry implements Serializable, Comparable<TodoEntry> {
         this.type = type;
     }
 
-    public void setDeadline(LocalDateTime deadline) {
-        this.deadline = deadline;
+    /**
+     * Sets todo entry deadline.
+     * @param deadline LocalDateTime type. deadline must not be a past date.
+     * @throws IllegalDateException when given date is invalid. use try-catch statements
+     * to handle such cases.
+     */
+    public void setDeadline(LocalDateTime deadline) throws IllegalDateException{
+        if (deadline.isBefore(LocalDateTime.now())) {
+            throw new IllegalDateException("Todo deadline is in the past");
+        }
     }
 
     // getters

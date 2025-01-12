@@ -5,4 +5,5 @@ module com.hexacode.studenttaskpro {
 
     opens com.hexacode.studenttaskpro to javafx.fxml;
     exports com.hexacode.studenttaskpro;
+    exports com.hexacode.studenttaskpro.exceptions;
 }

@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class HelloApplication extends Application {
@@ -21,40 +20,13 @@ public class HelloApplication extends Application {
         // console checking
         Scanner console = new Scanner(System.in);
 
-        TodoList list = new TodoList();
-
-        TodoEntry linear = new TodoEntry(
-                "Finals",
-                "Free Elective",
-                false,
-                TodoType.REVIEW,
-                LocalDateTime.of(2025, 1, 31, 0, 0)
-        );
-
-        TodoEntry dsa = new TodoEntry(
-                "Review for Deptals",
-                "DSA",
-                false,
-                TodoType.REVIEW,
-                LocalDateTime.of(2025, 1, 15, 0, 0)
-        );
-
-        TodoEntry ds2 = new TodoEntry(
-                "Review for Deptals",
-                "Discrete Structures 2",
-                false,
-                TodoType.REVIEW,
-                LocalDateTime.of(2025, 1, 22, 0, 0)
-        );
-
-        list.addEntry(linear);
-        list.addEntry(dsa);
-        list.addEntry(ds2);
-
-        for (TodoEntry entry : list.getList()) {
-            System.out.println(entry.toString());
-            System.out.println();
-        }
+//        TodoEntry pastTodo = new TodoEntry(
+//                "Review for departmentals",
+//                "Data Structures and Algorithms",
+//                false,
+//                TodoType.REVIEW,
+//                LocalDateTime.of(2023, 1, 1, 0, 0)
+//        );
 
         console.close();
     }
