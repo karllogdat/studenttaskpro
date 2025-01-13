@@ -4,18 +4,22 @@ import java.io.*;
 import java.util.PriorityQueue;
 
 public class TodoList {
+    // currently uses heaps, lacks proper sorting of entries
     private PriorityQueue<TodoEntry> list = new PriorityQueue<TodoEntry>();
 
     // TODO: make file path dynamic
     // example: System.getProperty("user.home") + "/todos.ser"
     private final File file = new File("src/main/resources/todos.ser");
 
+    // default constructor
+    // reads entries saved on file using private method
     TodoList() {
         readTodosFromFile();
     }
 
+    // deserializes saved entries from file
     @SuppressWarnings("unchecked")
-    public void readTodosFromFile() {
+    private void readTodosFromFile() {
         try {
             FileInputStream fileIn = new FileInputStream(file);
             ObjectInputStream in = new ObjectInputStream(fileIn);

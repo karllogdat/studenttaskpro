@@ -10,24 +10,17 @@ import java.time.LocalDateTime;
  */
 public class TodoEntry implements Serializable, Comparable<TodoEntry> {
     private String name;
-    // private String section;
-
-    // setter needs to normalize string
     private String subject;
-    // private String professor;
-    // String school
-
-    // checkbox sa ui
     private boolean isDone;
-    // list sa ui
     private TodoType type;
-
-    // date related fields
     private LocalDateTime deadline;
 
     // constructor
+    // status parameter might be removed since addition of entry
+    // implies that it is not done yet
     TodoEntry(String name, String subject, boolean status, TodoType type, LocalDateTime deadline) {
-        // uses setter functions to properly handle invalid arguments
+        // uses setter functions to properly handle
+        // invalid arguments (if required)
         this.setName(name);
         this.setSubject(subject);
         this.setDone(status);
@@ -35,6 +28,7 @@ public class TodoEntry implements Serializable, Comparable<TodoEntry> {
         this.setDeadline(deadline);
     }
 
+    // default constructor
     TodoEntry() {
         this.name = "Unnamed";
         this.subject = "Unnamed";
